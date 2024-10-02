@@ -1,0 +1,40 @@
+.cardProducts {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    object-fit: cover;
+}
+
+.cardImg {
+    text-align: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.cardImg:hover {
+    transform: scale(1.05);
+}
+
+.botonCard {
+    text-align: center;
+    width: 100px;
+    padding: 10px;
+    background-color: #9ddfae;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botonCard:hover {
+    background-color: #7ac97e;
+}
