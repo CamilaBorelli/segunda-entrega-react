@@ -5,15 +5,13 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 
 export default function ItemDetailContainer() {
-  const [product, setProduct] = useState(null);
+  const [product] = useState(null);
 
-  const { id } = useParams()
+  const {itemId} = useParams()
 
   useEffect(() => {
-    getProductsId(id)
-      .then((data) => setProduct(data))
-      .catch((error) => console.error("Error al recuperar el producto:", error));
-  }, [id]);
+    getProductsId(itemId)
+  }, [itemId]);
 
   return (
     <section>
@@ -21,4 +19,3 @@ export default function ItemDetailContainer() {
     </section>
   );
 }
-

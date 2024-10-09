@@ -3,8 +3,8 @@ import Item from "../Item/Item";
 import { getProducts } from "../../asyncMock";
 
 
-export default function ItemList() {
-  const [products, setProducts] = useState([]);
+export default function ItemList({products}) {
+
 
   useEffect(() => {
     getProducts.then((data) => setProducts(data));

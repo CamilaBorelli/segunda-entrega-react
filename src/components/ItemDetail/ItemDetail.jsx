@@ -1,14 +1,9 @@
-import { useEffect, useState } from 'react';
-import { getProducts } from "../../asyncMock";
 import ItemCount from '../ItemCount/ItemCount';
 
-export default function ProductsList({ id, title, price, categoryId, img, description }) {
+export default function ProductsList({product}) {
+const {title, price, categoryId, img, description} = product;
 
-
-  useEffect(() => {
-    getProducts.then((data) => setProducts(data));
-  }, []);
-
+  
   return (
     <>
       <article className="">

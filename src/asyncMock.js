@@ -40,7 +40,7 @@ export const getProducts = new Promise((resolve) => {
 });
 
 export const getProductsId = (id) => {
-  return products.find((element) => element.id == id);
+  return products.find((product) => product.id == id);
 };
 
 export const getProductsCategory = (categoryId) => {
