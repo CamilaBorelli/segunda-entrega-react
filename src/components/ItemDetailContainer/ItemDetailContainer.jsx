@@ -5,17 +5,19 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 
 export default function ItemDetailContainer() {
-  const [product] = useState(null);
+  const [product, setProduct] = useState(null);
 
-  const {itemId} = useParams()
+  const {id} = useParams()
 
   useEffect(() => {
-    getProductsId(itemId)
-  }, [itemId]);
+    setProduct(getProductsId(id));
+  }, [id]);
+
+if (product === null) return <>Cargando...</>
 
   return (
     <section>
-      <ItemDetail key={product.id} products={product} />
+      <ItemDetail key={product.id} product={product} />
     </section>
   );
 }

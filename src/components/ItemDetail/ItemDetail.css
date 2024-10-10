@@ -1,0 +1,16 @@
+.detalle {
+    text-align: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.detalleImg {
+    width: 400px;
+    height: 400px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.parrafo {
+    margin: 50px;
+}
