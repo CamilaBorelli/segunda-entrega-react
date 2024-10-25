@@ -1,12 +1,19 @@
+import { useCartContext } from "../../Context/CartContext";
+import { Link } from "react-router-dom";
 import "./CartWidget.css";
 
-export default function Cart() {
+export default function CartWidget() {
+    const { totalProducts } = useCartContext();
+
     return (
         <>
-            <div className="carrito">
-                <i className="bi bi-cart3">(2)</i>
-            </div>
+            <Link
+                to='/cart'
+                className="carrito"
+                style={{ display: totalProducts() > 0 ? 'block' : 'none' }}
+            ><i className="bi bi-cart3"></i>
+                {totalProducts() > 0 && <span>{totalProducts()}</span>}
+            </Link>
         </>
-    )
+    );
 }
-

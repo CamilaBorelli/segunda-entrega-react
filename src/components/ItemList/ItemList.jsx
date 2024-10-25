@@ -6,8 +6,8 @@ export default function ItemList({products}) {
   return (
     <>
       <div>
-        {products.map((products) => (
-          <Item key={products.id} products={products} />
+        {products.map((product) => (
+          <Item key={product.id} product={product} />
         ))}
       </div>
     </>

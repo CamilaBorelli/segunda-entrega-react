@@ -1,4 +1,7 @@
 .ItemCount{
+    width: fit-content;
+    margin: auto;
+    padding: 20 px;
     display: flex;
     text-align: center;
     justify-content: center;

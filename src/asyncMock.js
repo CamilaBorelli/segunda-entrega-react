@@ -1,4 +1,4 @@
-const products = [
+/*const products = [
   {
     id: 1,
     title: 'Maceta ceramica Hiromi alto Blanco',
@@ -46,4 +46,4 @@ export const getProductsId = (id) => {
 export const getProductsCategory = (categoryId) => {
   return products.filter((products) => products.categoryId === categoryId);
 
-};
+};*/

@@ -1,7 +1,7 @@
-import Cart from "../CartWidget/CartWidget";
 import "./NavBar.css";
 import logo from '../../assets/fotologo.jpg';
 import { NavLink } from 'react-router-dom';
+import CartWidget from "../CartWidget/CartWidget";
 
 export default function NavBar() {
 
@@ -16,9 +16,10 @@ export default function NavBar() {
                     <button><NavLink to={'category/maceta'} className="boton">Macetas</NavLink></button>
                     <button><NavLink to={'category/interior'} className="boton">Interior</NavLink></button>
                     <button><NavLink to={'category/exterior'} className="boton">Exterior</NavLink></button>
-
                 </div>
-                <Cart />
+                <div className="nav-section">
+                    <CartWidget />
+                </div>
             </nav>
         </>
     )
