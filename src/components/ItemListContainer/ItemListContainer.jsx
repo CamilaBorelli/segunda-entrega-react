@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { collection, getDocs, query, where } from "firebase/firestore"; 
-import { db } from "../../firebase/firebase"; 
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 
@@ -12,13 +12,13 @@ export default function ItemListContainer() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const productsRef = collection(db, "products"); 
+        const productsRef = collection(db, "products");
         let q;
 
         if (categoryId) {
           q = query(productsRef, where("categoryId", "==", categoryId));
         } else {
-          q = productsRef; 
+          q = productsRef;
         }
 
         const querySnapshot = await getDocs(q);
@@ -27,7 +27,7 @@ export default function ItemListContainer() {
           ...doc.data(),
         }));
 
-        setProducts(loadedProducts); 
+        setProducts(loadedProducts);
       } catch (error) {
         console.error("Error fetching products: ", error);
       }
@@ -38,9 +38,8 @@ export default function ItemListContainer() {
 
   return (
     <>
-      <h1>Todos los productos</h1>
-      <div className="Card">
-        <ItemList products={products} />;
+      <div className="container">
+        <ItemList products={products} />
       </div>
     </>
   );

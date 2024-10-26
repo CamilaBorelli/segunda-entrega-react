@@ -1,5 +1,6 @@
 import { useState } from "react";
-/*import "./CheckoutForm.css";*/ 
+import "./CheckoutForm.css";
+import Checkout from "../Checkout/Checkout";
 
 export default function CheckoutForm({ onConfirm }) {
   const [buyer, setBuyer] = useState({ name: "", email: "", phone: "" });
@@ -14,20 +15,19 @@ export default function CheckoutForm({ onConfirm }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Verificar que todos los campos estén completos
     if (!buyer.name || !buyer.email || !buyer.phone) {
       alert("Por favor, completa todos los campos.");
       return;
     }
 
-    // Pasar los datos del comprador al componente padre
+
     onConfirm(buyer);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <h2>Checkout</h2>
-      <div className="form-group">
+      <div className="feed-form">
         <label>Nombre</label>
         <input
           type="text"
@@ -37,7 +37,7 @@ export default function CheckoutForm({ onConfirm }) {
           required
         />
       </div>
-      <div className="form-group">
+      <div className="feed-form">
         <label>Email</label>
         <input
           type="email"
@@ -47,7 +47,7 @@ export default function CheckoutForm({ onConfirm }) {
           required
         />
       </div>
-      <div className="form-group">
+      <div className="feed-form">
         <label>Teléfono</label>
         <input
           type="tel"
@@ -57,7 +57,7 @@ export default function CheckoutForm({ onConfirm }) {
           required
         />
       </div>
-      <button type="submit">Confirmar compra</button>
+      <button onClick={(<Checkout />)} type="submit">Confirmar compra</button>
     </form>
   );
 }

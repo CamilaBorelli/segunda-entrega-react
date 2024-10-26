@@ -9,7 +9,7 @@ export default function CartWidget() {
         <>
             <Link
                 to='/cart'
-                className="carrito"
+                className="cartWidget"
                 style={{ display: totalProducts() > 0 ? 'block' : 'none' }}
             ><i className="bi bi-cart3"></i>
                 {totalProducts() > 0 && <span>{totalProducts()}</span>}

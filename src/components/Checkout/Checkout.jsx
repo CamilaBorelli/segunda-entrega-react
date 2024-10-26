@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useCartContext } from "../../Context/CartContext";
 import { sendOrder } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
-import CheckoutForm from "../CheckoutForm/CheckoutForm"; // Importar el componente del formulario
-/*import "./Checkout.css";*/
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import "./Checkout.css";
 
 export default function Checkout() {
   const { cart, totalPrice, clearCart } = useCartContext();
@@ -11,7 +11,7 @@ export default function Checkout() {
   const navigate = useNavigate();
 
   const handleConfirm = async (buyer) => {
-    // Crear objeto de la orden
+
     const order = {
       buyer,
       items: cart.map((product) => ({
@@ -25,9 +25,9 @@ export default function Checkout() {
     };
 
     try {
-      const id = await sendOrder(order); // Enviar la orden a Firebase
-      setOrderId(id); // Guardar el ID de la orden
-      clearCart(); // Limpiar el carrito
+      const id = await sendOrder(order);
+      setOrderId(id);
+      clearCart();
     } catch (error) {
       console.error("Error al generar la orden:", error);
     }

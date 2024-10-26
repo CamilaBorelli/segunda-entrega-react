@@ -1,5 +1,14 @@
-.cart {
-    text-align: center;
-    gap: 10px;
-    justify-content: center;
+.cartComponent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 100%;
+}
+
+.cartImg {
+    width: 200px;
+    height: 200px;
 }

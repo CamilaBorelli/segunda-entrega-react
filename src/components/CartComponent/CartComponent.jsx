@@ -1,12 +1,12 @@
 import { useCartContext } from "../../Context/CartContext";
 import Swal from 'sweetalert2';
-
+import "./CartComponent.css";
 
 
 const CartComponent = ({ products }) => {
-    const {id, quantity, title, price, img } = products;
+    const { id, quantity, title, price, img } = products;
 
-    const {removeItem} = useCartContext () 
+    const { removeItem } = useCartContext()
 
     const handleRemoveItem = () => {
         Swal.fire({
@@ -15,19 +15,19 @@ const CartComponent = ({ products }) => {
             text: "El producto se ha eliminado.",
             confirmButtonText: "Aceptar"
         });
-        removeItem(id);
+        removeItem();
     };
 
 
     return (
-        <article className="cart">
-            <img src={img} alt={title} className="" />
+        <div className="cartComponent">
+            <img src={img} alt={title} className="cartImg" />
             <h4>Titulo : {title}</h4>
             <p>Cantidad : {quantity}</p>
             <p>Precio : ${price}</p>
             <p>Subtotal : ${quantity * price}</p>
             <button onClick={handleRemoveItem}>Eliminar</button>
-        </article>
+        </div>
     )
 }
 

@@ -36,8 +36,9 @@ const CartProvider = ({ children }) => {
     const isInCart = (id) =>
         cart.some(product => product.id === id);
 
-    const removeItem = (id) =>
-        setCart(cart.filter(product => product.id !== id));
+    const removeItem = (id) => {
+        setCart(prevCart => prevCart.filter(product => product.id !== id));
+    };
 
     return (
         <CartContext.Provider value={{ cart, clearCart, isInCart, removeItem, addItem, totalProducts, totalPrice }}>

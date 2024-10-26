@@ -9,15 +9,16 @@ export default function NavBar() {
         <>
             <nav className="nav">
                 <div>
-                    <img className="logo" src={logo} alt="imagen de logo" />
-                    <button><NavLink to={'/'} className="boton">Inicio</NavLink></button>
+                    <NavLink to={'/'}>
+                        <img className="logo" src={logo} alt="imagen de logo" />
+                    </NavLink>
                 </div>
                 <div>
-                    <button><NavLink to={'category/maceta'} className="boton">Macetas</NavLink></button>
-                    <button><NavLink to={'category/interior'} className="boton">Interior</NavLink></button>
-                    <button><NavLink to={'category/exterior'} className="boton">Exterior</NavLink></button>
+                    <button className="boton"><NavLink to={'category/maceta'} className="botonLink">Macetas</NavLink></button>
+                    <button className="boton"><NavLink to={'category/interior'} className="botonLink">Interior</NavLink></button>
+                    <button className="boton"><NavLink to={'category/exterior'} className="botonLink">Exterior</NavLink></button>
                 </div>
-                <div className="nav-section">
+                <div>
                     <CartWidget />
                 </div>
             </nav>

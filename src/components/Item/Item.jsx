@@ -6,14 +6,16 @@ export default function Card({ product }) {
 
 
   return (
-    <article className="cardProducts">
-      <h4>{title}</h4>
-      <p>{categoryId}</p>
-      <img src={img} alt={title} className="cardImg" />
-      <p>$ {price}</p>
-      <button className="botonCard">
-        <Link to={`/item/${id}`}>Ver más</Link>
-      </button>
-    </article>
+    <div className="cardProducts">
+      <div className='card'>
+        <h4 className='cardTitle'>{title}</h4>
+        <p>{categoryId}</p>
+        <img src={img} alt={title} className="cardImg" />
+        <p>$ {price}</p>
+        <button className="botonCard">
+          <Link to={`/item/${id}`} className='verMas'>Ver más</Link>
+        </button>
+      </div>
+    </div>
   );
 }

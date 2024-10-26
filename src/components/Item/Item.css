@@ -1,40 +1,116 @@
 .cardProducts {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-    object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 50px;
+  max-width: 100%;
+}
+
+.card {
+  flex: 1 1 250px;
+  margin: 0;
+  max-width: 250px;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #e0e0e0;
+
+}
+
+.card:hover {
+  box-shadow: 0px 0px 30px 1px rgb(245, 218, 168);
+
 }
 
 .cardImg {
-    text-align: center;
-    justify-content: center;
-    width: 200px;
-    height: 200px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+  background-size: cover;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
-.cardImg:hover {
-    transform: scale(1.05);
+button {
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #d17914;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #000000;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
 }
 
-.botonCard {
-    text-align: center;
-    width: 100px;
-    padding: 10px;
-    background-color: #9ddfae;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+button:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #ff910077;
+  z-index: -1;
 }
 
-.botonCard:hover {
-    background-color: #7ac97e;
+button:hover,
+button:focus {
+  color: white;
+}
+
+button:hover:before,
+button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+.verMas {
+  text-decoration: none;
+  color: rgb(56, 26, 2);
+  font-weight: bold;
+}
+
+.verMas:hover {
+  color: rgb(100, 60, 30);
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+   
+    max-width: none;
+   
+  }
+
+  .cardImg {
+    height: 150px;
+    width: 150px;
+ 
+  }
+
+  .botonCard {
+    width: 100%;
+  }
 }

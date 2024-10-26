@@ -1,8 +1,19 @@
-.ItemCount{
+.ItemCount {
     width: fit-content;
     margin: auto;
-    padding: 20 px;
+    padding: 20px; 
     display: flex;
     text-align: center;
     justify-content: center;
+    font-family: 'Arial', sans-serif; 
+    font-size: 16px; 
+    color: #333; 
+}
+
+
+@media (max-width: 768px) {
+    .ItemCount {
+        font-size: 14px; 
+        padding: 10px; 
+    }
 }

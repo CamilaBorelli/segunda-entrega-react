@@ -35,12 +35,12 @@ export default function ItemCount({ initial, stock, onAdd }) {
   return (
     <>
       <div className="ItemCount">
-        <button disabled={numero >= stock} onClick={handleClickSuma}>+</button>
+        <button className="suma" disabled={numero >= stock} onClick={handleClickSuma}>+</button>
         <p>{numero}</p>
-        <button disabled={numero <= 1} onClick={handleClickResta}>-</button>
+        <button className="resta" disabled={numero <= 1} onClick={handleClickResta}>-</button>
       </div>
       <div>
-        <button disabled={stock <= 0} onClick={handleAddToCart}>Agregar al carrito</button>
+        <button className="agregar" disabled={stock <= 0} onClick={handleAddToCart}>Agregar al carrito</button>
       </div>
     </>
   );

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getOneProduct } from "../../firebase/firebase"; 
-import ItemDetail from "../ItemDetail/ItemDetail"; 
+import { getOneProduct } from "../../firebase/firebase";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import Loader from "../Loader/Loader";
 
 
 export default function ItemDetailContainer() {
@@ -25,7 +26,11 @@ export default function ItemDetailContainer() {
     fetchProduct();
   }, [id]);
 
-  if (product === null) return <>Cargando...</>
+  if (product === null) return (
+    <div className="loader">
+      <Loader />
+    </div>
+  );
 
   return (
     <>
