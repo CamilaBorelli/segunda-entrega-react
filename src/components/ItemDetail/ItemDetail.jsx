@@ -6,7 +6,7 @@ import { useCartContext } from '../../Context/CartContext';
 
 
 export default function ItemDetail({ product }) {
-  const { title, price, categoryId, img, description, } = product;
+  const { title, price, categoryId, img, description} = product;
 
   const [loadCart, setLoadCart] = useState(false);
 

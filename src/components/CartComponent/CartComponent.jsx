@@ -14,8 +14,11 @@ const CartComponent = ({ products }) => {
             title: "Oops...",
             text: "El producto se ha eliminado.",
             confirmButtonText: "Aceptar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                removeItem(id); 
+            }
         });
-        removeItem();
     };
 
 

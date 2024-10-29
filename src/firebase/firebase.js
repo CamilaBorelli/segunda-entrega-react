@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getFirestore, doc, getDoc, getDocs, collection, query, where, addDoc,} from "firebase/firestore";
+import { getFirestore, doc, getDoc, getDocs, collection, query, where, addDoc, } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -29,7 +29,10 @@ export async function getOneProduct(id) {
   try {
     const snapshot = await getDoc(documentRef);
     if (snapshot.exists()) {
-      return snapshot.data();
+      return {
+        id: snapshot.id,
+        ...snapshot.data()
+      }
     } else {
       console.log('El documento no existe!');
     }

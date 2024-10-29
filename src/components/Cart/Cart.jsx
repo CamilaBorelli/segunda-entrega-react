@@ -32,15 +32,15 @@ const Cart = () => {
         <div className="cart">
             <h1 className="cartTitle">Tu carrito</h1>
             <ul>
-                {cart.map((item) => (
-                    <li key={item.id}>
-                        <CartComponent products={item} />
+                {cart.map((product) => (
+                    <li key={product.id}>
+                        <CartComponent products={product} />
                     </li>
                 ))}
             </ul>
             <h2>Total: ${totalPrice()}</h2>
             <button onClick={handleClearCart}>Vaciar carrito</button>
-            <Link to='/checkout'>Finalizar compra</Link>
+            <Link to='/checkout' className="botonDetalle" >Finalizar compra</Link>
         </div>
     );
 }

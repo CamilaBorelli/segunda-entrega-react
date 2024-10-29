@@ -6,6 +6,13 @@ Este proyecto es un carrito de compras desarrollada con React. Permite a los usu
 
 https://github.com/CamilaBorelli/segunda-entrega-react.git
 
+## Instalación
+
+```sh
+cd primera-entrega-react
+npm run dev
+```
+
 ## Uso
 
 - Agrega productos al carrito haciendo clic en "Agregar al carrito".
