@@ -5,14 +5,23 @@ export default function Card({ product }) {
   const { id, title, price, categoryId, img } = product;
 
 
+ 
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('es-ES', {
+      style: 'currency',
+      currency: 'ARS', 
+      minimumFractionDigits: 0.
+    }).format(price);
+  };
+
   return (
     <div className="cardProducts">
       <div className='card'>
         <h4 className='cardTitle'>{title}</h4>
-        <p>{categoryId}</p>
+        <p className="categorys">{categoryId}</p>
         <img src={img} alt={title} className="cardImg" />
-        <p>$ {price}</p>
-        <button className="botonCard">
+        <p className="price">Precio: $ {formatPrice(price)}</p>
+        <button className="botonDetalle">
           <Link to={`/item/${id}`} className='verMas'>Ver más</Link>
         </button>
       </div>

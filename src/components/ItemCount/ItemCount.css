@@ -1,19 +1,28 @@
-.ItemCount {
-    width: fit-content;
-    margin: auto;
-    padding: 20px; 
+.ItemCountContainer {
     display: flex;
-    text-align: center;
-    justify-content: center;
-    font-family: 'Arial', sans-serif; 
-    font-size: 16px; 
-    color: #333; 
+    align-items: center;
+    gap: 20px;
 }
 
+.ItemCount {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-@media (max-width: 768px) {
-    .ItemCount {
-        font-size: 14px; 
-        padding: 10px; 
-    }
+.ItemCount button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 3px solid #d17914;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+
+}
+
+.agregar {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ffffff;
 }

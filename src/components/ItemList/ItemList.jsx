@@ -5,7 +5,7 @@ export default function ItemList({ products }) {
 
   return (
     <>
-      <div>
+      <div className="cardProducts">
         {products.map((product) => (
           <Item key={product.id} product={product} />
         ))}

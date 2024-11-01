@@ -10,6 +10,8 @@ export default function ItemDetail({ product }) {
 
   const [loadCart, setLoadCart] = useState(false);
 
+  const [quantity, setQuantity] = useState(1);
+
   const { addItem } = useCartContext();
 
   const onAdd = (quantity) => {
@@ -17,20 +19,31 @@ export default function ItemDetail({ product }) {
     addItem(product, quantity)
   }
 
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('es-ES', {
+      style: 'currency',
+      currency: 'ARS', 
+      minimumFractionDigits: 0. 
+    }).format(price);
+  };
+
   return (
-    <article className="detalle">
-      <h4>{title}</h4>
-      <p>{categoryId}</p>
+    <div className="detalle">
       <img src={img} alt={title} className="detalleImg" />
-      <p className="parrafo">Descripción: {description}</p>
-      <p>$ {price}</p>
-      <section >
-        {loadCart ? (
-          <Link to='/cart' className="botonDetalle" >Finalizar compra</Link>
-        ) : (
-          <ItemCount initial={0} stock={6} onAdd={onAdd} />
-        )}
-      </section>
-    </article>
+      <div className="detalleTexto">
+        <h4>{title}</h4>
+        <p className="categorys">{categoryId}</p>
+        <p className="parrafo">Descripción: {description}</p>
+        <p className="price">Precio por unidad: $ {formatPrice(price)}</p>
+        <p className="totalPrice">Precio total: $ {formatPrice(price * quantity)}</p>
+        <div>
+          {loadCart ? (
+            <Link to='/cart' className="botonDetalle" >Finalizar compra</Link>
+          ) : (
+            <ItemCount initial={0} stock={6} onAdd={onAdd}  setQuantity={setQuantity}/>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }

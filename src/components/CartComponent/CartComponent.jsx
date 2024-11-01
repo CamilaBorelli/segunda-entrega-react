@@ -16,20 +16,28 @@ const CartComponent = ({ products }) => {
             confirmButtonText: "Aceptar"
         }).then((result) => {
             if (result.isConfirmed) {
-                removeItem(id); 
+                removeItem(id);
             }
         });
     };
 
+
+    const formatPrice = (price) => {
+        return new Intl.NumberFormat('es-ES', {
+            style: 'currency',
+            currency: 'ARS',
+            minimumFractionDigits: 0.
+        }).format(price);
+    };
 
     return (
         <div className="cartComponent">
             <img src={img} alt={title} className="cartImg" />
             <h4>Titulo : {title}</h4>
             <p>Cantidad : {quantity}</p>
-            <p>Precio : ${price}</p>
-            <p>Subtotal : ${quantity * price}</p>
-            <button onClick={handleRemoveItem}>Eliminar</button>
+            <p>Precio por unidad: $ {formatPrice(price)}</p>
+            <p>Precio total: $ {formatPrice(price * quantity)}</p>
+            <button className="botonDetalle" onClick={handleRemoveItem}>Eliminar</button>
         </div>
     )
 }

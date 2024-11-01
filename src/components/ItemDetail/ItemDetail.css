@@ -1,29 +1,28 @@
 .detalle {
+  display: flex; 
   text-align: center;
-  gap: 10px;
-  justify-content: center;
+  align-items: center; 
   padding: 50px;
-
 }
 
 .detalleImg {
-  width: 400px;
-  height: 400px;
-  border-radius: 8px;
-  text-align: center;
+  width: 400px; 
+  height: 400px; 
+  border-radius: 8px; 
+  margin-right: 20px; 
 }
 
-
-.detalleImg:hover {
-  box-shadow: 0px 0px 30px 1px rgb(245, 218, 168);
-
+.detalleTexto {
+  flex: 1; 
+  text-align: left; 
 }
 
 .parrafo {
-  margin: 50px;
+  margin: 20px 0; 
 }
 
 .botonDetalle {
+
   font-size: 16px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -39,7 +38,6 @@
   text-decoration: none;
   transition: 0.3s ease all;
   z-index: 1;
-  gap: 20px;
 }
 
 .botonDetalle:before {
@@ -70,14 +68,4 @@
 
 .botonDetalle:active {
   transform: scale(0.9);
-}
-
-.finalizar {
-  text-decoration: none;
-  color: rgb(56, 26, 2);
-  font-weight: bold;
-}
-
-.finalizar:hover {
-  color: rgb(100, 60, 30);
 }
